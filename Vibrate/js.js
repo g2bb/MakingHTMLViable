@@ -1,5 +1,5 @@
 function vibrate(){
-    var time = document.getElementsByName('seconds').value
+    var time = document.getElementById('sec').value
     window.navigator.vibrate(time);
     alert(time);
 }
