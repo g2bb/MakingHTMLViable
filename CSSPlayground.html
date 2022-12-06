@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>G2's CSS Playground</title>
+
+</head>
+<body>
+    <style contenteditable style="display: block; white-space: pre;" id="style">
+/*=================Content=================*/
+/* Any content you edit in here should start with ".trialContent" */
+
+.trialContent h1{
+    color:#0477bf;
+}
+
+
+
+
+
+
+/*==========================================*/
+/*                               Fancy Page Content                               */
+/*==========================================*/
+/* Pre-configued page styling to make this site a little more enjoyable! You can safely ignore this */
+
+*::-webkit-scrollbar {
+    width: .5em;
+    height: .5em;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 6px;
+}
+*::-webkit-scrollbar-corner{
+    diaplay: none;
+}
+*{
+    transition: all .5s ease;
+}
+body {
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+      animation: rainbow 18s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+style{
+    border-radius: 10px;
+    border: solid 3px white;
+    color: white;
+    mix-blend-mode: difference;
+    box-shadow: 5px 5px white;
+    position: absolute;
+    padding: 15px 35px;
+    outline: none;
+    width: 47%;
+    overflow: scroll;
+    bottom: 13px;
+    top: 8px;
+    background-color: #646464;
+    font-size: 1.25;
+}
+style:hover, style:active, style:focus{
+    box-shadow: none;
+    margin: 5px 0px 0px 5px;
+}
+.trialContent{
+    width: 47%;
+    position: fixed;
+    right: 11px;
+    top: 11px;
+    bottom: 16px;
+    border-radius: 7px;
+    color: black;
+    background-color: white;
+    outline: none;
+    overflow: scroll;
+}
+.trialContent:hover, .trialContent:active, .trialContent:focus {
+    box-shadow: none;
+    margin: 5px 5px 0px 0px;
+    bottom: 11px;
+}
+.trialContent:hover + .ContentWrapper, .trialContent:active + .ContentWrapper, .trialContent:focus + .ContentWrapper{
+    box-shadow: none;
+    margin: 5px 5px 0px 0px;
+    bottom: 8px;
+}
+.ContentWrapper{
+    mix-blend-mode: difference;
+    box-shadow: -5px 5px white;
+    border-radius: 10px;
+    border: solid 3px white;
+    width: 47%;
+    position: fixed;
+    right: 8px;
+    top: 8px;
+    bottom: 13px;
+    z-index: 1000;
+    pointer-events: none;
+}
+    </style>
+    <div class="trialContent" contenteditable>
+        <h1>Hello World!</h1>
+        <p>Any content you edit in here should start with ".trialContent"</p>
+    </div>
+    <div class="ContentWrapper"></div>
+
+
+</body>
+    <script>
+    document.getElementById('style').addEventListener('keypress', (evt) => {
+        if (evt.which === 13 && evt.shiftKey==false) {
+            evt.preventDefault();
+            document.execCommand("insertLineBreak");
+        }
+    });
+    </script>
+</html>
